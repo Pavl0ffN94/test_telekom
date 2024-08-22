@@ -23,13 +23,14 @@ export const MessageList = () => {
   useLayoutEffect(() => {
     scrollToBottom();
   }, [messages]);
+  console.log(messages);
 
   return (
     <section className={styles.messageList}>
       <div className={styles.date}>{formattedDate}</div>
-      {messages.map((msg, index) => (
+      {messages.map(msg => (
         <motion.div
-          key={index}
+          key={msg.uid}
           initial={{opacity: 0, y: 20}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.5}}>

@@ -18,7 +18,11 @@ export const FormMessage = () => {
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+
   const addMessage = useMessageStore(state => state.addMessage);
+
+  const generateRandomId = () =>
+    `${Date.now()}_${Math.random().toString(36).substr(2, 9)}`; //Не лучшчий способ но за не имением лучшего
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
@@ -46,6 +50,7 @@ export const FormMessage = () => {
         image: preview || '',
         timestamp: dayjs().format('YYYY-MM-DD HH:mm:ss'),
         isMine: true,
+        uid: generateRandomId(),
       };
 
       addMessage(userMessage);
@@ -54,6 +59,7 @@ export const FormMessage = () => {
         message: 'Hello world',
         timestamp: dayjs().format('YYYY-MM-DD HH:mm:ss'),
         isMine: false,
+        uid: generateRandomId(),
       };
 
       setTimeout(() => addMessage(botMessage), 1000);
@@ -89,7 +95,13 @@ export const FormMessage = () => {
       </label>
       {preview && (
         <div className={styles.imagePreviewContainer}>
-          <img src={preview} alt='preview' className={styles.imagePreview} />
+          <Image
+            width={30}
+            height={40}
+            src={preview}
+            alt='preview'
+            className={styles.imagePreview}
+          />
           <CloseOutlined className={styles.removeImageIcon} onClick={handleRemoveImage} />
         </div>
       )}

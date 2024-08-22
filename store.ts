@@ -6,6 +6,7 @@ interface Message {
   image?: string;
   timestamp: string;
   isMine: boolean;
+  uid: string;
 }
 
 interface MessageStore {

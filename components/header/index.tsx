@@ -16,11 +16,13 @@ export const Header = () => {
           <Image src={avatar} key={avatar.src} alt='avatar Bot' />
         ))}
       </div>
+
       <div className={styles.grop}>
         <div className={styles.groupName}>
           <span className={styles.title}>🦄 Team Unicorns</span>
           <span className={styles.infoMessage}>last seen 45 minutes ago</span>
         </div>
+
         <button onClick={() => handleClick()} className={styles.options}>
           <Image src={optionIcon} alt='option' />
         </button>
