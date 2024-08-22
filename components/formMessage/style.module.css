@@ -1,0 +1,127 @@
+.chatForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: inherit;
+  height: 60px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 90vw;
+  padding-bottom: 1rem;
+}
+
+.chatForm:hover .chatForm:focus-within {
+  color: #3D3D3D;
+  max-width: 90vw;
+}
+.sendButton{
+  color: #007aff;
+}
+
+
+
+.icon {
+  font-size: 24px;
+  color: #888;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.sendButton, .uploadButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #888;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.sendButton:disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+
+
+.imagePreviewContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.imagePreview {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 5px;
+}
+
+.removeImageIcon {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .chatForm {
+    height: 50px;
+    width: 100%;
+  }
+
+  .icon {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+
+  .input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .sendButton, .uploadButton {
+    font-size: 15px;
+  }
+
+  .imagePreview {
+    max-width: 30px;
+    max-height: 30px;
+  }
+}
+
+.messageImage {
+  max-width: 20%;
+  max-height: 100px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+@media (max-width: 426px) {
+    .input{
+      max-width: 70%
+    }
+}
+
+@media (max-width: 372px) {
+  
+  .input{ 
+      max-width: 40%
+    }
+}
