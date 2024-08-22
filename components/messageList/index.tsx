@@ -23,7 +23,6 @@ export const MessageList = () => {
   useLayoutEffect(() => {
     scrollToBottom();
   }, [messages]);
-  console.log(messages);
 
   return (
     <section className={styles.messageList}>
