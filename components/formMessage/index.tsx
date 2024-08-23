@@ -12,6 +12,7 @@ import dayjs from 'dayjs';
 import useMessageStore from '@/store';
 import uploadFile from '@/assets/image/uploadFile.svg';
 import Image from 'next/image';
+import {generateRandomId} from '@/utils/generateUid';
 
 export const FormMessage = () => {
   const [message, setMessage] = useState<string>('');
@@ -20,9 +21,6 @@ export const FormMessage = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const addMessage = useMessageStore(state => state.addMessage);
-
-  const generateRandomId = () =>
-    `${Date.now()}_${Math.random().toString(36).substr(2, 9)}`; //Не лучшчий способ но за не имением лучшего
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);

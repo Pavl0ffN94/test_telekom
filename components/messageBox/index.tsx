@@ -5,7 +5,6 @@ import React, {useState, useRef, useEffect, useCallback} from 'react';
 import useMessageStore from '@/store';
 
 import dayjs from 'dayjs';
-import Image from 'next/image';
 
 import {MessageLayout} from './MessageLayout';
 

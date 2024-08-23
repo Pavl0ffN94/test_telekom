@@ -5,14 +5,11 @@ import {motion} from 'framer-motion';
 import useMessageStore from '@/store';
 import {MessageBox} from '../messageBox';
 import styles from './style.module.css';
-import dayjs from 'dayjs';
+import {formattedDate} from '@/constant';
 
 export const MessageList = () => {
   const messages = useMessageStore(state => state.messages);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const date = dayjs();
-  const formattedDate = date.format('M/D/YYYY');
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {

@@ -1,4 +1,4 @@
-'use client';
+
 
 import React from 'react';
 import styles from './style.module.css';
@@ -7,8 +7,6 @@ import {avatarsBot} from '@/assets/image';
 import optionIcon from '@/assets/image/optionIcon.png';
 
 export const Header = () => {
-  const handleClick = () => console.log('Click options');
-
   return (
     <header className={styles.wrapper}>
       <div className={styles.icons}>
@@ -23,7 +21,7 @@ export const Header = () => {
           <span className={styles.infoMessage}>last seen 45 minutes ago</span>
         </div>
 
-        <button onClick={() => handleClick()} className={styles.options}>
+        <button  className={styles.options}>
           <Image src={optionIcon} alt='option' />
         </button>
       </div>
