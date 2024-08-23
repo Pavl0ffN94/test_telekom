@@ -4,6 +4,7 @@
   justify-content: space-around;
   background-color: inherit;
   height: 60px;
+  max-height: 10vh;
   transition: background-color 0.3s, box-shadow 0.3s;
   width: 90vw;
   padding-bottom: 1rem;
@@ -34,8 +35,6 @@
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-
-
 .sendButton, .uploadButton {
   background: none;
   border: none;
@@ -53,8 +52,6 @@
   cursor: not-allowed;
   color: #ccc;
 }
-
-
 
 .imagePreviewContainer {
   position: relative;
